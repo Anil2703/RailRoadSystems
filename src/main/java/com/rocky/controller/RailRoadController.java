@@ -42,7 +42,7 @@ public class RailRoadController {
      * @return the Waybill object if found, or a 404 response if not found
      */
     @GetMapping("/waybill/{shipmentId}")
-    public ResponseEntity<Waybill> getWaybillByShipmentId(@PathVariable String shipmentId) {
+    public ResponseEntity<Waybill> getWaybillByShipmentId(@PathVariable("shipmentId") String shipmentId) {
         logger.info("Fetching Waybill for shipmentId={}", shipmentId);
         Waybill waybill = waybillService.getWaybillByShipmentId(shipmentId);
         if (waybill != null) {
