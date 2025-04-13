@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: railroadsystems
+    env: java
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/railroadsystems-1.0.0.jar
+    plan: free
