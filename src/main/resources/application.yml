@@ -1,12 +1,21 @@
 spring:
   datasource:
+    driver-class-name: org.postgresql.Driver
 #    url: jdbc:postgresql://localhost:5432/railway
 #    username: postgres
 #    password: {DB_PASSWORD}
     jdbcUrl: jdbc:postgresql://ep-winter-moon-a59f5ymi-pooler.us-east-2.aws.neon.tech/neondb
     username: neondb_owner
     password: npg_rq9vIOac0TjP
-    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    # Hikari
+    poolName: SpringBootHikariCP
+    maximumPoolSize: 5
+    minimumIdle: 3
+    maxLifetime: 2000000
+    connectionTimeout: 30000
+    idleTimeout: 30000
+    pool-prepared-statements: true
   sql:
     init:
       mode: always

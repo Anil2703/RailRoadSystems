@@ -17,11 +17,15 @@ public class WaybillService {
 
     private static final Logger logger = LoggerFactory.getLogger(WaybillService.class.getName());
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private WaybillEventPublisher waybillEventPublisher;
+
+
+    public WaybillService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public Waybill generateWaybill(BillOfLading bol) {
         String waybillNumber = UUID.randomUUID().toString();
